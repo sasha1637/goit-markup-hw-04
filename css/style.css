@@ -18,6 +18,7 @@
   --footer-contacts-color: rgba(255, 255, 255, 0.6);
   --border-header-bottom: rgba(236, 236, 236, 1);
   --background-color: rgba(47, 48, 58, 1);
+  --social-link-color: rgba(175, 177, 184, 1);
 }
 
 body {
@@ -117,6 +118,11 @@ img {
   display: flex;
   align-items: center;
 }
+.contact-item .link {
+  display: flex;
+  align-items: center;
+}
+
 .contact-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -124,15 +130,31 @@ img {
   color: var(--primary-text-color);
   font-weight: 500;
 }
+.email-icon {
+  content: '';
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  fill: currentColor;
+}
+.tell-icon {
+  content: '';
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+  fill: currentColor;
+}
 .nav-list .link:hover,
 .nav-list .link:focus,
-.header-contacts .link:hover,
-.header-contacts .link:focus {
+.contact-item .link:hover,
+.contact-item .link:focus {
   color: var(--accent-color);
 }
+
 .nav-list .link.current {
   color: var(--accent-color);
 }
+
 /* ------------------------------ End header ------------------------------ */
 
 /* ---------------------------------- Hero ---------------------------------- */
@@ -142,6 +164,14 @@ img {
   padding-top: 200px;
   padding-bottom: 200px;
   text-align: center;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../image/hero/bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .hero-main-title {
   color: var(--primary-white-color);
@@ -176,6 +206,22 @@ img {
 /* -------------------------------- End hero -------------------------------- */
 
 /* -------------------------------- Advantage ------------------------------- */
+.advantage-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  background: #f5f4fa;
+  border-radius: 4px;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+}
+
 .advantage {
   padding-bottom: 0;
   padding-bottom: 47px;
@@ -264,6 +310,7 @@ img {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  background-color: var(--primary-white-color);
 }
 .team-list .title {
   font-weight: 500;
@@ -275,23 +322,88 @@ img {
 .team-list .profession {
   font-size: 16px;
   line-height: 1.19;
+  margin-bottom: 16px;
 }
 .teamcard {
   padding-top: 30px;
   padding-bottom: 30px;
-  background-color: var(--primary-white-color);
+}
+/* социальные сети */
+.social-list {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.social-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.social-list-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--social-link-color);
+}
+.social-list-link:hover,
+.social-list-link:focus {
+  background-color: var(--accent-color);
+}
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  fill: var(--primary-white-color);
 }
 
 /* -------------------------------- End team -------------------------------- */
 
+/* company */
+.company-title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--title-text-color);
+  margin-bottom: 50px;
+}
+
+.company-list {
+  display: flex;
+}
+.company-list-link {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+.company-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.company-list-icon {
+  fill: var(--social-link-color);
+}
+.company-list-item:hover .company-list-link,
+.company-list-item:focus .company-list-link {
+  border-color: var(--accent-color);
+}
+
+.company-list-link:hover .company-list-icon,
+.company-list-link:focus .company-list-icon {
+  fill: var(--accent-color);
+}
+
+/*  end company */
 /* --------------------------------- Footer --------------------------------- */
 /* ---------------------------------- logo ---------------------------------- */
-
-.footer {
-  background-color: var(--background-color);
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
 
 .footer .logo {
   color: var(--primary-white-color);
@@ -300,6 +412,18 @@ img {
   margin-bottom: 20px;
 }
 /*                                  End logo                                  */
+.footer {
+  background-color: var(--background-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.footer-conteiner {
+  display: flex;
+  align-items: baseline;
+}
+.logo-address {
+  margin-right: 70px;
+}
 .footer-address-list .link {
   line-height: 1.71;
   color: var(--footer-contacts-color);
@@ -309,7 +433,7 @@ img {
   display: flex;
   flex-direction: column;
 }
-.footer-item:not(:last-child) {
+.footer-address-item:not(:last-child) {
   margin-bottom: 8px;
 }
 .footer-address-list .map {
@@ -321,6 +445,36 @@ img {
 .footer-address-list .link:hover,
 .footer-address-list .link:focus {
   color: var(--accent-color);
+}
+/* Социальные ссылки */
+.get-in {
+  margin-bottom: 22px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--primary-white-color);
+}
+
+.footer .social-list {
+  padding: 0;
+}
+.footer .social-list-item:not(:last-child) {
+  margin-right: 10px;
+}
+.footer .social-list-link {
+  background-color: rgb(68, 69, 78);
+}
+.footer .social-list-icon {
+  fill: var(--primary-white-color);
+}
+
+.footer.social-list-link:not(:last-child) {
+  margin-right: 10px;
+}
+.footer .social-list-link:hover,
+.footer .social-list-link:focus {
+  background-color: var(--accent-color);
 }
 
 /* -------------------------------- Portfolio ------------------------------- */
@@ -385,5 +539,10 @@ img {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: 0;
+}
+.portfolio-item:focus,
+.portfolio-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 /* --------------------------------End Portfolio ------------------------------- */
