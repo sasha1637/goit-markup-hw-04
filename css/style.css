@@ -29,7 +29,6 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
 }
-
 /* ------------------------------- Components ------------------------------- */
 
 .list {
@@ -168,7 +167,7 @@ img {
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url('../image/hero/bg.png');
+    url('../image/hero/bg.jpg ');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -327,13 +326,13 @@ img {
 .teamcard {
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 /* социальные сети */
 .social-list {
   display: flex;
   justify-content: space-between;
-  padding-left: 32px;
-  padding-right: 32px;
 }
 
 .social-list-link {
@@ -534,6 +533,7 @@ img {
 .portfolio-list .description {
   font-size: 16px;
   line-height: 1.87;
+  color: var(--primary-text-color);
 }
 .portflio-text-position {
   padding: 20px 24px;
